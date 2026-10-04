@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Match - Let AI Find Your Love</title>
+    <meta name="description" content="AI agents date on your behalf based on your LinkedIn and Instagram profiles.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- LANDING SCREEN -->
+        <div id="landing-screen" class="screen active">
+            <h1>Agentic Match</h1>
+            <p class="hero-subtitle">Let your personal AI agent read your profiles, understand your needs, and go on dates on your behalf.</p>
+            
+            <div class="glass" style="padding: 2.5rem; text-align: left;">
+                <div class="input-group">
+                    <label>Your LinkedIn URL</label>
+                    <input type="text" id="linkedin-url" placeholder="https://linkedin.com/in/you" value="https://linkedin.com/in/arivera">
+                </div>
+                <div class="input-group">
+                    <label>Your Public Instagram</label>
+                    <input type="text" id="instagram-url" placeholder="https://instagram.com/you" value="https://instagram.com/alexr_tech">
+                </div>
+                <button id="start-btn" style="margin-top: 1rem;">Unleash My Agent</button>
+            </div>
+        </div>
+
+        <!-- LOADING SCREEN -->
+        <div id="loading-screen" class="screen" style="text-align: center; padding-top: 15vh;">
+            <div class="loader"></div>
+            <h2 id="loading-text">Extracting Needs & Hobbies...</h2>
+        </div>
+
+        <!-- PROFILE SCREEN -->
+        <div id="profile-screen" class="screen">
+            <h2 style="text-align: center; color: var(--primary-light);">Agent Analysis Complete</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Here is how your AI agent understands you.</p>
+            
+            <div class="glass profile-card" style="max-width: 600px; margin: 0 auto;">
+                <div class="avatar-placeholder" id="prof-avatar">A</div>
+                <h2 id="prof-name">Name</h2>
+                <p id="prof-role">Role</p>
+                
+                <div style="text-align: left; margin-top: 2rem;">
+                    <h3>Core Needs</h3>
+                    <div class="tags" id="prof-needs"></div>
+                    
+                    <h3 style="margin-top: 1.5rem;">Hobbies</h3>
+                    <div class="tags" id="prof-hobbies"></div>
+                    
+                    <h3 style="margin-top: 1.5rem;">Interests</h3>
+                    <div class="tags" id="prof-interests"></div>
+                </div>
+                
+                <button id="start-dating-btn" style="margin-top: 2.5rem;">Let Agents Date Now</button>
+            </div>
+        </div>
+
+        <!-- SIMULATION SCREEN -->
+        <div id="simulation-screen" class="screen">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Agents Are Dating...</h2>
+            
+            <div class="glass simulation-container">
+                <div class="agent-avatars">
+                    <div class="avatar-placeholder pulse" id="sim-agent-a">A</div>
+                    <div style="font-size: 2rem; color: var(--secondary);">❤️</div>
+                    <div class="avatar-placeholder pulse" id="sim-agent-b">?</div>
+                </div>
+                
+                <div class="log-box" id="sim-log">
+                    <!-- Logs injected via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- RANKINGS SCREEN -->
+        <div id="rankings-screen" class="screen">
+            <h2 style="text-align: center; color: var(--primary-light);">Your Top Matches</h2>
+            <p style="text-align: center;">Based on 25 AI agent dates, here is who fits you best.</p>
+            
+            <div class="rankings-list" id="rankings-list">
+                <!-- Ranked cards injected via JS -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/mockData.js"></script>
+    <script src="js/agentEngine.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
